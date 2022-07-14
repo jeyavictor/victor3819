@@ -14,7 +14,7 @@ public class TestPlayers {
 	JSONArray s;
         @org.testng.annotations.BeforeClass
 		private void fileread() throws IOException, ParseException {
-			FileReader f = new FileReader("E:\\java program\\DropDown\\TestVagrand\\src\\test\\resources\\players.json");
+			FileReader f = new FileReader("src\\test\\resources\\players.json");
 			JSONParser p = new JSONParser();
 			Object obj = p.parse(f);
 			JSONObject j = (JSONObject)obj;
@@ -24,7 +24,7 @@ public class TestPlayers {
 		}
         
         @Test(priority = 1)
-        private void validatingForeginPlayer(){
+        private void ForeginPlayer(){
             int count=0;
             for (int i=0;i<s.size();i++){
                 JSONObject obj = (JSONObject) s.get(i);
@@ -34,10 +34,10 @@ public class TestPlayers {
                 }
             }
             Assert.assertTrue(count==4);
-            System.out.println("Team is containg 4  foreign players");
+            System.out.println("4  foreign players");
         }
         @Test(priority = 2)
-        public void validatingWicketKeeper(){
+        public void WicketKeeper(){
             int count=0;
             for (int i=0;i<s.size(); i++){
                 JSONObject obj = (JSONObject) s.get(i);
@@ -47,7 +47,7 @@ public class TestPlayers {
                 }
             }
             Assert.assertTrue(count>=1);
-            System.out.println("Team is containg at least one wicket keeper");
+            System.out.println("containg one wicket keeper");
         }
         
         
